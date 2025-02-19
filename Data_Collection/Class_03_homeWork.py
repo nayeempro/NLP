@@ -31,17 +31,14 @@ for i in range(1,total_page):
 
 print("all dict is ---->",link_dict)
 
+# ------This part is just for my own interest Just ignore it -------
 
 # Flatten the data into a list of tuples [(page, link), (page, link), ...]
 flattened_data = [(page, link) for page, links in link_dict.items() for link in links]
-
 # Convert to DataFrame
 df = pd.DataFrame(flattened_data, columns=["Page Number", "Link"])
-
 # Save to Excel
 df.to_excel("output.xlsx", index=False)
-
-print("Excel file saved successfully!")
 
 
 time.sleep(10)
